@@ -281,13 +281,15 @@ Try to solve the challenges without making use of the Internet.
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The whoami command
-
+### ✅ The whoami command
+ 
 **Describe in your own words what the `whoami` command does.**
+This command will give you the name of the current user with a specific user id who is using it at that moment.
 
-### ❌ The uptime command
+### ✅ The uptime command
 
 **Describe in your own words what the `uptime` command does.**
+With this command you get the time the system is active.
 
 ### ❌ Help on ls
 
