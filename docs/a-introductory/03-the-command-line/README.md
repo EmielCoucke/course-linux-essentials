@@ -295,6 +295,8 @@ With this command you get the time the system is active.
 
 **`ls` can be used to list the files and directories in Linux. If you execute the command `ls -h` you do not get any help about the command. How come? What does `ls -h` actually do?**
 
+hallo ik ben emiel dit is een test!!
+
 ### ❌ Hidden files
 
 **Linux harbors some hidden files which are not automatically listed when executing `ls`. Find out how to list hidden files. How can we recognize hidden files?**
