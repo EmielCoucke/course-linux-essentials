@@ -322,26 +322,51 @@ The shell is outputting this message.
 
 ### ✅ Creating group with id
 
-*Create a group called `hackers` with the specific group id `1337`. Now create two users (students from the class) and add them both the group.*
+*Create a group called `hackers` with the specific group id `1337`. Now create two users (students from the class) and add them both to the group.*
+
+sudo addgroup -g 1337 hackers
+sudo adduser mark
+sudo adduser bart
+sudo adduser mark hackers
+sudo adduser bart hackers
 
 ### ✅ Difference false and nologin
 
 *Some user entries are showing `/bin/false` as the shell command. Do some research and explain what the difference is with `/usr/sbin/nologin`.*
 
-### ✅ The auth.log file 
+It means, both denies a shell access to a particular user account. /bin/false does nothing and it just exits with a status code indicating failure when a user attempts to login to the machine. ... Whereas, /sbin/nologin politely denies a shell access for a particular user account and exists with a status code of non-zero.
+
+### ✅ The auth.log file
 
 *What does the file `/log/var/auth.log` track? Provide an example of a command that shows entries being added to the log after you executed the command. Include the entry here that was added to the file.*
 
-### ❌ Locking out Steve
+Shows general messages and info regarding the system. Basically a data log of all activity throughout the global system.
+
+logger Welcome to Emiel his pc.
+
+### ✅ Locking out Steve
 
 *Create a new user steve and set a password for the user. Login to the `steve` account using `su` to make sure it works.*
 
+sudo adduser steve
+sudo passwd Hallo!1458
+su steve
+
 *Now lock the user account and make sure there is no way anyone can login as `steve`, not even `root`*
 
-### ❌ Zsh Shell
+passwd -l steve
+
+### ✅ Zsh Shell
 
 *Install the zsh shell on your system. Now change your own shell to `zsh`. Make sure to do this in such a way that a new session will also use `zsh`.*
 
-### ❌ Semester Account
+sudo apt-get update
+sudo apt-get install zsh
+zsh
+chsh -s /usr/bin/zsh
+
+### ✅ Semester Account
 
 *Create a new account for an exchange student called `maggie`. Make sure the account can only be used until 31st of January of the next year. Basically only for this semester*.
+
+sudo useradd -e 2021-01-31 maggie
