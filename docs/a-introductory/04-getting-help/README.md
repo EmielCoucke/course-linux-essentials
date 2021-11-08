@@ -186,50 +186,120 @@ Find all the info you need in the man-pages. Make sure to comment the commands y
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ The free command
+### ✅ The free command
 
 *Describe in your own words what the `free` command does. Give an example and a partial output.*
 
-### ❌ The id command
+The command is used to check the used and not used space of physical memory and swap memory in KB
+
+| total| used     | free      | shared  | buff/cache   | available
+| Mem: | 16641840 | 8315284   |8097204  |17720         |229352
+|Swap: | 8192824  | 50331648  | 176480  | 50155168     |
+
+### ✅ The id command
 
 *Describe in your own words what the `id` command does. Give an example and a partial output.*
+This command will give you all the users en groups on your pc.
 
-### ❌ The tree command
+uid=1000(emielc) gid=1000(emielc) groups=1000(emielc),4(adm),20(dialout),24(cdrom),25(floppy),27(sudo),29(audio),30(dip),44(video),46(plugdev),117(netdev),1002(coolios)
+
+### ✅ The tree command
 
 *Describe in your own words what the `tree` command does. How do you list all subdirectories too? How can you only include directories? If the `tree` command is not available on your system you can install it using `sudo apt install tree`*
 
-### ❌ The which command
+It give you a tree, like a pedigree with all you directories and files. At the end it give you how many directories and files you have.
+
+### ✅ The which command
 
 *Describe in your own words what the `which` command does. What is the result for `pwd` ?*
 
-### ❌ The file command
+The command searches for the executable specified as an argument in the directories listed in the PATH environment variable. In Linux, PATH is an environmental variable that tells the shell and other programs which directories to search for executable files.
+
+print the working directory to your terminal.
+
+### ✅ The file command
 
 *Describe in your own words what the `file` command does. What is the result for `~/.bashrc` ?*
 
-### ❌ The type command
+The file command will give you the file type.
+
+/home/emielc/.bashrc: ASCII text, is the result. The .bashrc file is a script file that’s executed when a user logs in. The file itself contains a series of configurations for the terminal session
+
+### ✅ The type command
 
 *Describe in your own words what the `type` command does. What is the result for `ls` and what is the result for `g++` ?*
 
-### ❌ Counting lines and words
+The command type will give you some more info about a linux command. Find if the given command is an alias, shell built-in, file, function, or keyword using "type" command.
+
+ls is aliased to `ls --color=auto'
+g++ is /usr/bin/g++
+
+### ✅ Counting lines and words
 
 *What command can be used to count lines and words in text? Give an example and explain the output.*
 
-### ❌ The wget command
+wc -w will give you the number of words, -l the numbers of lines.
+
+![alt hello.txt](/img/Capture.jpg)!
+
+wc -l hello.txt
+5 hello.txt
+
+wc -w hello.txt
+60 hello.txt
+
+### ✅ The wget command
 
 *How can you download a file from the Internet using the command line?. Find a file online to use it on and demonstrate its usage.*
 
-### ❌ The dmesg command
+wget https://docs.google.com/spreadsheets/d/0ByGD4TVUyDtHRUhzRTJGUnZadkk/edit?resourcekey=0-GhgGetzg_ebuWql9qfu3Pg#gid=1870154059
+--2021-10-14 16:28:54--  https://docs.google.com/spreadsheets/d/0ByGD4TVUyDtHRUhzRTJGUnZadkk/edit?resourcekey=0-GhgGetzg_ebuWql9qfu3Pg
+Resolving docs.google.com (docs.google.com)... 142.250.179.142, 2a00:1450:400e:810::200e
+Connecting to docs.google.com (docs.google.com)|142.250.179.142|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘edit?resourcekey=0-GhgGetzg_ebuWql9qfu3Pg’
+
+edit?resourcekey=0     [     <=>       ] 255.65K   290KB/s    in 0.9s
+
+2021-10-14 16:28:55 (290 KB/s) - ‘edit?resourcekey=0-GhgGetzg_ebuWql9qfu3Pg’ saved [261786]
+
+### ✅ The dmesg command
 
 *Describe in your own words what the `dmesg` command does. Give an example and a partial output.*
 
-### ❌ Checksums
+The mesg utility is invoked by a user to control write access others have to the terminal device associated with standard error output
+
+dmesg
+[    0.008201]  Microsoft 4.4.0-19041.1237-Microsoft 4.4.35
+[    0.069075] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/drive
+[    0.069078] : 19
+[    0.069191] <3>init: (1) ERROR: ConfigInitializeCommon:570: Failed to mount /usr/lib/wsl/lib
+[    0.069194] 19
+
+### ✅ Checksums
 
 *Go to the website of Raspberry Pi - [https://www.raspberrypi.org/software/operating-systems](https://www.raspberrypi.org/software/operating-systems) and download the Raspberry Pi OS image using the `wget` command line tool. Now check if the SHA-256 checksum complies with the one being advertised on the website.*
 
 *What tool did you use to calculate the checksum? Demonstrate its usage.*
 
 *What is the use of this hash?*
+This hash is used for security.
 
-### ❌ The printenv command
+### ✅ The printenv command
 
 *Describe in your own words what the `printenv` command does.*
+
+This command outputs specified environment variables.
+
+### ✅ IP Address
+
+*Find the IP address of your WiFi interface. What command did you use?*
+
+ip address is used to find the ip of your wifi
+
+### ✅ IP of Sivir Server
+
+*What is the IP address of the internal server `sivir.devbit.be`? Make sure you are connected to the `Devbit` network.*
+
+ping sivir.devbit.be, with this you can find the ip. 172.16.10.5
