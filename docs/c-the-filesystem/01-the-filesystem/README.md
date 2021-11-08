@@ -627,3 +627,74 @@ The most used commands to traverse and manipulate the file system of a Linux sys
 | `mv` | `-v` (verbose output), `-i` (interactive) | SOURCE DESTINATION | Move files/directories |
 | `rm` | `-i` (interactive), `-v` (verbose), `-r` (recursive) | FILE(S)/DIR(S) | Remove files/directories |
 | `rmdir` | `-p` (parents), `-v` (verbose) | DIR(S) | Remove empty directories |
+
+## Challenges
+
+Try to solve the challenges without using google. Better to use the man-pages to find the information you need.
+
+Mark challenges using a ✅ once they are finished.
+
+### ✅ Authentication Log
+
+There is a file on the system that logs authentication changes and failures. Can you guess where it can be found? Provide the path to the file.
+
+\SMS_DP\sms\logs is where the file can be found.
+
+### ✅ Apt Source List
+
+The apt tool uses a configuration file which specifies in which repositories it should look for packages. Its called the apt sources.list file. Can you guess where it can be found? Provide the path to the file.
+
+This file can be found in /etc/apt/sources. list.
+
+### ✅ Tmp Filesystem
+
+Create a file called hello in /tmp. Restart your linux distro using reboot. Where is the file? What happened?
+
+The file is gone because /tmp is a directory that exists until you restart your pc/ linux.
+
+### ✅ Timestamps
+
+Create a file called first-of-many in your home directory. Use nano to add some content to the file. Now list the details of the file such as the size and when it was last modified.
+
+stat first-of-many
+  File: first-of-many
+  Size: 13              Blocks: 0          IO Block: 4096   regular file
+Device: eh/14d  Inode: 1688849861020938  Links: 1
+Access: (0777/-rwxrwxrwx)  Uid: ( 1000/  emielc)   Gid: ( 1000/  emielc)
+Access: 2021-11-08 20:38:42.560328400 +0100
+Modify: 2021-11-08 20:38:36.045781500 +0100
+Change: 2021-11-08 20:38:36.045781500 +0100
+ Birth: -
+
+### ✅ No space for spaces
+
+Try to create a file called second try (with the space included) using the command touch second try in your home directory. What happened? Why did this happen? How can you actually achieve creating a file with a space in its name?
+
+It will make two files one second and one try. 
+
+The recommendation to not use spaces in filenames comes from the danger that they might be misinterpreted by software that poorly supports them.
+So linux doesn't permit this.
+
+You can make a file with spaces if you use quotation marks. touch "second try".
+
+### ✅ The root
+
+Try to create a directory /backups (under the root of the filesystem). Why is it failing?
+
+Because permission is denied.
+
+Now use sudo to create the directory. Try creating a file called README.md within this /backups directory. Can you do it? Why / Why not?
+
+You can not because permission is denied.
+
+### ✅ Bash RC
+
+In your home directory you will find a file called .bashrc. Create a backup of that file called .bashrc.bak.
+
+### ❌ Sym Linking
+
+What does the tool ln allow you to do? Use it to create such a link in your home directory called secrets to the file /etc/passwd. Now use the cat tool to open the file secrets. What do you see? What happened?
+
+### ❌ SD Card
+
+Plugin an SD Card or a USB stick into you computer. Where can we find the actual block device? Where is the filesystem mounted? What is the difference between these two?
