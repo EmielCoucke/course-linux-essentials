@@ -252,3 +252,13 @@ For example:
 
 <!-- TODO: -->
 <!-- Creation mode -->
+
+## Challenges
+
+Try to solve the challenges without using google. Better to use the man-pages to find the information you need.
+
+Mark challenges using a ✅ once they are finished.
+
+### ❌ Etcetera
+
+Who is the owner of the /etc directory on the system? What are the permissions on this directory? Why can you list the content of this directory?
