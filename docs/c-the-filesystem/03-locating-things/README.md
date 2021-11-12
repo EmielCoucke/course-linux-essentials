@@ -267,7 +267,17 @@ Install the locate command and update the index database.
 Locate the following files on your system:
 
 sudoers.dist
+/usr/share/doc/sudo/examples/sudoers.dist
+
 the configuration file ssh_config
+/etc/ssh/ssh_config
+/etc/ssh/ssh_config.d
+/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/Git/etc/ssh/ssh_config
+/mnt/c/Program Files/Git/etc/ssh/ssh_config
+/mnt/c/Users/Emiel Coucke/.vscode/extensions/ms-vscode-remote.remote-ssh-edit-0.66.0/syntaxes/ssh_config.tmLanguage.json
+/mnt/c/Users/Emiel Coucke/.vscode/extensions/ms-vscode-remote.remote-ssh-edit-0.66.1/syntaxes/ssh_config.tmLanguage.json
+/usr/share/man/man5/ssh_config.5.gz
+
 auth.log
 
 ### ❌ Python man-pages
