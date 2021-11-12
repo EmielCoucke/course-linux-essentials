@@ -670,7 +670,7 @@ Change: 2021-11-08 20:38:36.045781500 +0100
 
 Try to create a file called second try (with the space included) using the command touch second try in your home directory. What happened? Why did this happen? How can you actually achieve creating a file with a space in its name?
 
-It will make two files one second and one try. 
+It will make two files one second and one try.
 
 The recommendation to not use spaces in filenames comes from the danger that they might be misinterpreted by software that poorly supports them.
 So linux doesn't permit this.
@@ -687,13 +687,15 @@ Now use sudo to create the directory. Try creating a file called README.md withi
 
 You can not because permission is denied.
 
-### ✅ Bash RC
+### ❌ Bash RC
 
 In your home directory you will find a file called .bashrc. Create a backup of that file called .bashrc.bak.
 
 ### ❌ Sym Linking
 
 What does the tool ln allow you to do? Use it to create such a link in your home directory called secrets to the file /etc/passwd. Now use the cat tool to open the file secrets. What do you see? What happened?
+
+The tool makes links between files, hard links by default.
 
 ### ❌ SD Card
 

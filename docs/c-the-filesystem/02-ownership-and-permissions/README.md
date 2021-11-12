@@ -259,6 +259,8 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Etcetera
+### ✅ Etcetera
 
 Who is the owner of the /etc directory on the system? What are the permissions on this directory? Why can you list the content of this directory?
+
+The owner of the folder is the root; can write, read and execute. You can list content of this directory because others also have read and execute rights. The same rights as the members of the file's group.
