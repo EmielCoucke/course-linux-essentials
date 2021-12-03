@@ -278,8 +278,6 @@ the configuration file ssh_config
 /mnt/c/Users/Emiel Coucke/.vscode/extensions/ms-vscode-remote.remote-ssh-edit-0.66.1/syntaxes/ssh_config.tmLanguage.json
 /usr/share/man/man5/ssh_config.5.gz
 
-auth.log
-
 ### ❌ Python man-pages
 
 Use the whereis tool to determine the location of the man-pages of python.
