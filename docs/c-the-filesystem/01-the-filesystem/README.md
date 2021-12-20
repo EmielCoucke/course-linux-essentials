@@ -187,8 +187,8 @@ For instance, if you want to move to the home directory of the user `bioboost`, 
 
 The lack of the `/` from the beginning tells the shell to use the current directory as the base for looking for the path.
 
-::: tip
-Under this `/home` directory there will be a directory for most users on the system. The directory name will be the same as the name of the user.
+::: tip Home
+Under this `/home` directory there will be a directory for most users on the system (normal users). The directory name will be the same as the login name of the user. This is called the home directory of the user.
 :::
 
 This is where the `..` directory link comes in handy. To **move to the parent directory of your current directory**, you can type:
@@ -266,7 +266,7 @@ Let's take a closer look at the different directories which can be found under t
 
 **/dev** - This directory houses the **files that represent devices** on your system. Every hard drive, terminal device, input or output device available to the system is represented by a file here. Depending on the device, you can operate on the devices in different ways. For instance, for a device that represents a hard drive, like `/dev/sda`, you can mount it to the file system to access it. On the other hand, if you have a file that represents a line printer like `/dev/lpr`, you can write directly to it to send the information to the printer.
 
-**/etc** - Originally stood for **"et cetera"**, as it was originally used for all the stuff that didn't fit into other directories. Nowadays the directory hosts configuration files and is often refered to as the **"Editable Text Configuration"** files directory. This is one area of the file system where you will spend a lot of time if you are working as a system administrator. This directory is basically a **configuration directory for various system-wide services**. By default, this directory contains many files and subdirectories. It contains the configuration files for most of the activities on the system, regardless of their function. In cases where multiple configuration files are needed, many times an application-specific subdirectory is created to hold these files. If you are attempting to configure a service or program for the entire system, this is a great place to look.
+**/etc** - Originally stood for **"et cetera"**, as it was originally used for all the stuff that didn't fit into other directories. Nowadays the directory hosts configuration files and is often referred to as the **"Editable Text Configuration"** files directory. This is one area of the file system where you will spend a lot of time if you are working as a system administrator. This directory is basically a **configuration directory for various system-wide services**. By default, this directory contains many files and subdirectories. It contains the configuration files for most of the activities on the system, regardless of their function. In cases where multiple configuration files are needed, many times an application-specific subdirectory is created to hold these files. If you are attempting to configure a service or program for the entire system, this is a great place to look.
 
 ::: tip etc
 As with many things in the Linux world, there have been some heated discussions on what `etc` actually stands for. Some say *et cetera*, *Editable Text Configuration*, or *Extended Tool Chest*.
