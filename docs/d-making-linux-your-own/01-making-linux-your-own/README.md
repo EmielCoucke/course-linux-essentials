@@ -414,21 +414,45 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Dotfiles
+### ✅ Dotfiles
 
 *Setup your own dotfiles. Make the repo public.*
 
-### ❌ Installation Script
+git init
+
+git submodule add https://github.com/anishathalye/dotbot
+
+git config --global user.email "emiel.coucke@me.com"
+
+git config --global user.name "EmielCoucke"
+
+![repo](./img/git.png)
+
+### ✅ Installation Script
 
 *Create an installation script for the tools and libraries you use most. Add the script to your dotfiles.*
 
-### ❌ neofetch
+cd ~/dotfiles
+
+mkdir scripts
+
+touch scripts/wsl
+
+chmod u+x scripts/wsl
+
+![repo](./img/no_neo.png)
+
+### ✅ neofetch
 
 *Add neofetch to your install script.*
 
-### ❌ @vue/cli
+![repo](./img/scripts.png)
+
+### ✅ @vue/cli
 
 *Add @vue/cli as a global install to your script.*
+
+![repo](./img/vue.png)
 
 ### ❌ Conda
 
@@ -449,6 +473,8 @@ sudo mv gcc-arm-embedded /opt
 
 *Make sure to add the `~/.mbed/.mbed` config file to your dotfiles.*
 
-### ❌ Alias for mbed
+### ✅ Alias for mbed
 
 *Create an alias `mbedc` that compiles an mbed project, flashes the target and starts up the serial terminal at a baudrate of 115200.*
+
+alias mbedc="mbed compile -f --sterm --baudrate 115200"

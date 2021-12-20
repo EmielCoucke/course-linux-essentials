@@ -283,7 +283,7 @@ This package generates ASCII art pictures of a cow with a message
 
 *Port scan the server `sivir.devbit.be`. Make sure you are connected to the `Devbit` network. What services are running on this machine?*
 
-### ❌ NodeJS
+### ✅ NodeJS
 
 *Install `snap` using `apt`. Next use `snap` to install `nodejs`.*
 
@@ -292,6 +292,9 @@ This package generates ASCII art pictures of a cow with a message
 ```js
 console.log("Hello World from JavaScript");
 ```
+sudo apt install snapd
+
+![Node.js](./img/node.png)
 
 ### ❌ Dhcpdump
 

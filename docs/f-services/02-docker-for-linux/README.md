@@ -253,7 +253,7 @@ Try to solve the challenges without using google. Better to use the man-pages to
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Docker on the Pi
+### ✅ Docker on the Pi
 
 *Install docker and your raspberry pi and make sure the hello-world runs*.
 
@@ -263,7 +263,7 @@ Mark challenges using a ✅ once they are finished.
 
 *You can find the repository at [https://github.com/BioBoost/linux-essentials-docker-hello-node-api](https://github.com/BioBoost/linux-essentials-docker-hello-node-api)*.
 
-### ❌ Node-RED on RPi
+### ✅ Node-RED on RPi
 
 *Setup a node-red service on your Raspberry Pi using docker. At what port is it available?*
 

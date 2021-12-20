@@ -687,16 +687,24 @@ Now use sudo to create the directory. Try creating a file called README.md withi
 
 You can not because permission is denied.
 
-### ❌ Bash RC
+### ✅ Sym Linking
 
-In your home directory you will find a file called .bashrc. Create a backup of that file called .bashrc.bak.
+What does the tool ln allow you to do?
+It is a standard Unix command utility used to create a hard link or a symbolic link (symlink) to an existing file or directory. The tool makes links between files, hard links by default.
 
-### ❌ Sym Linking
+Use it to create such a link in your home directory called secrets to the file /etc/passwd. Now use the cat tool to open the file secrets. What do you see? What happened?
+ln -s /etc/passwd secrets
 
-What does the tool ln allow you to do? Use it to create such a link in your home directory called secrets to the file /etc/passwd. Now use the cat tool to open the file secrets. What do you see? What happened?
+If you type cat secret instead of cat /etc/passwd you will get the same.
+![Symlink to passwd](./img/symlink.png)
 
-The tool makes links between files, hard links by default.
-
-### ❌ SD Card
+### ❌✅ SD Card
 
 Plugin an SD Card or a USB stick into you computer. Where can we find the actual block device? Where is the filesystem mounted? What is the difference between these two?
+
+mount a usb:
+sudo fdisk -l
+mkdir /media/usb-drive
+mount /dev/sdc1 /media/usb-drive/
+mount | grep sdc1
+cd /media/usb-drive

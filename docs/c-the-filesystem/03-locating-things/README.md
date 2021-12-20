@@ -280,52 +280,97 @@ the configuration file ssh_config
 
 *Locate the following files on your system:*
 
-### ❌ Python man-pages
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the man-pages of `python`.*
 
-### ❌ Python man-pages
+python: /usr/bin/python3.8 /usr/lib/python2.7 /usr/lib/python3.8 /usr/lib/python3.9 /etc/python3.8 /usr/local/lib/python3.8 /mnt/c/Program Files (x86)/Mercurial/python27.dll /mnt/c/Users/Emiel Coucke/miniconda3/python.exe /mnt/c/Users/Emiel Coucke/miniconda3/python.pdb /mnt/c/Users/Emiel Coucke/miniconda3/python3.dll /mnt/c/Users/Emiel Coucke/miniconda3/python39.dll /mnt/c/Users/Emiel Coucke/miniconda3/python39.pdb /mnt/c/Python39/python.exe /mnt/c/Python39/python3.dll /mnt/c/Python39/python39.dll /mnt/c/Users/Emiel Coucke/AppData/Local/Microsoft/WindowsApps/python.exe /mnt/c/Users/Emiel Coucke/AppData/Local/Microsoft/WindowsApps/python3.exe
+
+### ✅ Python man-pages
 
 *Use the `whereis` tool to determine the location of the `find` binary.*
 
-### ❌ Which
+find: /usr/bin/find /mnt/c/Windows/system32/find.exe /mnt/c/Program Files/Git/usr/bin/find.exe /usr/share/man/man1/find.1.gz /usr/share/info/find.info-1.gz /usr/share/info/find.info-2.gz /usr/share/info/find.info.gz
+
+### ✅ Which
 
 *What is the location of the following commands for the current user:*
 
-* `passwd`
-* `locate`
-* `fdisk`
+* `passwd`: /usr/bin/passwd
+* `locate`: /usr/bin/locate
+* `fdisk`: /usr/sbin/fdisk
 
 *Why are the location of `passwd` and `fdisk` different? What is `fdisk` used for?*
+passwd is usable before the /usr partition is mounted, fsidk not, there are (root) privileges required.
 
 ### Use find for the following challenges
 
-Make sure to redirect the `permission denied` errors to `/dev/null` for all searches unless specified otherwise.
+Make sure to redirect the `permission denied` errors to `/dev/null` for all searches unless specified otherwise. 2>/dev/null
 
-#### ❌ kernel.log
+find /etc -name kernel 2>/dev/null
+
+#### ✅ kernel.log
 
 *Find the file `kernel.log`.*
 
-#### ❌ .bashrc
+sudo find / -name "kernel.log" 2>/dev/null
+
+#### ✅ .bashrc
 
 *Find the files `.bashrc`.*
 
-#### ❌ System Configuration Files
+sudo find / -name "*.bashrc*" 2>/dev/null
+[sudo] password for emielc:
+/etc/bash.bashrc
+/etc/skel/.bashrc
+/home/emielc/.bashrc
+/home/jeanpol/.bashrc
+/mnt/c/Program Files/Git/etc/bash.bashrc
+/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/Git/etc/bash.bashrc
+/root/.bashrc
+/usr/share/base-files/dot.bashrc
+/usr/share/doc/adduser/examples/adduser.local.conf.examples/bash.bashrc
+/usr/share/doc/adduser/examples/adduser.local.conf.examples/skel/dot.bashrc
+
+#### ✅ System Configuration Files
 
 *Search for files that end with the extension `.conf` and contain a filename with the keyword `system` in the `/etc` directory.*
 
-#### ❌ User Readable Files
+sudo find /etc -name "*system.conf" 2>/dev/null
+/etc/systemd/system.conf
+
+#### ✅ User Readable Files
 
 *What option can we use on `find` to make sure the current user can read the file? Don't use the `-perm` option. There is a better option. Give a nice example.*
+sudo find / -name "*.bashrc*" 2>/dev/null -exec ls -lh
+-rw-r--r-- 1 root root 2.3K Feb 25  2020 /etc/bash.bashrc
+-rw-r--r-- 1 root root 3.7K Feb 25  2020 /etc/skel/.bashrc
+-rw-r--r-- 1 emielc emielc 3.8K Nov 19 09:19 /home/emielc/.bashrc
+-rw-r--r-- 1 jeanpol jeanpol 3.7K Oct  7 12:02 /home/jeanpol/.bashrc
+-r-xr-xr-x 1 emielc emielc 2.5K Jul 28  2020 '/mnt/c/Program Files/Git/etc/bash.bashrc'
+-r-xr-xr-x 1 emielc emielc 2.5K Oct  8  2020 '/mnt/c/Program Files (x86)/Microsoft Visual Studio/2019/Community/Common7/IDE/CommonExtensions/Microsoft/TeamFoundation/Team Explorer/Git/etc/bash.bashrc'
+-rw-r--r-- 1 root root 3.1K Dec  5  2019 /root/.bashrc
+-rw-r--r-- 1 root root 3.1K Aug 14  2019 /usr/share/base-files/dot.bashrc
+-rw-r--r-- 1 root root 2.8K Sep 16  2018 /usr/share/doc/adduser/examples/adduser.local.conf.examples/bash.bashrc
+-rw-r--r-- 1 root root 802 Sep 16  2018 /usr/share/doc/adduser/examples/adduser.local.conf.examples/skel/dot.bashrc
 
-#### ❌ Altered Log Files
+#### ✅ Altered Log Files
 
 *Find all log files in `/var/log` that were modified in the last 24 hours. Make sure to only include files and not directories. Now extend the command to perform a long listing human readable `ls` for each file.*
 
-#### ❌ Steal All Logs
+find /var/log -type .log -mtime 0 2>/dev/null
+/var/log/apt/history.log
+/var/log/apt/term.log
+/var/log/dpkg.log
+
+#### ✅ Steal All Logs
 
 *Create a directory `logs` in `/tmp` and copy all `*.log` files you can find on the system to that location.*
+find / -name "*.log" -exec cp {} /tmp/logs \;
 
-#### ❌ Markdown README files
+#### ✅ Markdown README files
 
 *Find all `README.md` files on your system. Can you make it so the case of the filename does not matter? In other words, you should also be able to find `readme.md`, `Readme.md`, `readme.MD`, ...*
+
+find / -iname "readme.md" 2>/dev/null
+With the -iname will will search on a file name but the case does not matter.

@@ -604,13 +604,28 @@ Solve the challenges by creating small bash scripts. Place the bash scripts here
 
 Mark challenges using a ✅ once they are finished.
 
-### ❌ Log the Date
+### ✅ Log the Date
 
 *Create a script that output the date every 10 seconds. Use the `sleep` command to wait between calls to the `date` command.*
 
-### ❌ Available Memory
+![script output date every sec](./img/while.png)
+./hello
+
+Hello emielc. Today is Mon Dec 20 18:42:55 CET 2021
+
+Hello emielc. Today is Mon Dec 20 18:43:05 CET 2021
+
+### ✅ Available Memory
 
 *Output the available system memory together with the current date in the following format:*
+
+![current date and availabel syst mem](./img/date_mem.png)
+
+./date
+
+Mon Dec 20 18:57:05 CET 2021
+
+MemTotal:       16641840 kB
 
 ```
 [Thu 14 May 2020 11:12:55 AM CEST] MemAvailable:   28439572 kB
@@ -618,7 +633,7 @@ Mark challenges using a ✅ once they are finished.
 
 *The available memory can be found in the file `/proc/meminfo`. Use the `grep` tool to filter out the line with MemAvailable.*
 
-### ❌ Fetching Github Keys
+### ✅ Fetching Github Keys
 
 *Create a script that fetches the public SSH keys of a user on GitHub and displays them in the terminal. This can be accomplished by using the curl tool to access the endpoint `https://github.com/<username>.keys`, where `<username>` is an existing github username.*
 
@@ -639,10 +654,33 @@ Fetching Keys
 ...
 ```
 
+![get and output public keys of a git user](./img/gitkeys.png)
+
+./gitkeys
+Give you username of github:
+EmielCoucke
+rm: cannot remove 'EmielCoucke.keys': No such file or directory
+--2021-12-20 19:10:58--  https://github.com/EmielCoucke.keys
+Resolving github.com (github.com)... 140.82.121.3
+Connecting to github.com (github.com)|140.82.121.3|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 381 [text/plain]
+Saving to: ‘EmielCoucke.keys’
+
+EmielCoucke.keys          100%[====================================>]     381  --.-KB/s    in 0s
+
+2021-12-20 19:10:59 (3.64 MB/s) - ‘EmielCoucke.keys’ saved [381/381]
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCv+15ZV8mo1bebqDHI3s2VkLvgqaodDukZG2aJNlTZeYeV2nWp9PYYkCBwbINpHyxvsbKcy2qCR3tiYaHGroPQKcER5l1mU6S3Q/LRxQl+Q7fVQ31SIOFZIub84htLgzyHW9tykgKgbx+w5jKQQ+D+9lrc7MITQ1SiS4Ew7XxwH3QTsegDUd4A8NHtZ+L3ZKbM+n+J8YCkBqv52A4cusg82DLfY3tIIa/ppMnb9UhX3DpqTISKqZIGbH8Nci8Do7xfhGekw6lJAS0ynGaTd9IcjNrGY3/i/3oO+OkDV0o55zv8By/3vyo9OXJMyywuk0uQGFjkM4JNDpyzjKO0tLGd
+
 ### ❌ DHCP Traffic
 
 *Create a script that filters DHCP network traffic and outputs matching MAC-Addresses, IP-Addresses and Hostnames.*
 
-### ❌ Backups
+### ✅ Backups
 
 *Choose a directory on your system (best to choose one in your home-dir). Create a script that archives this directory in a `.tar.gz` tarball file. Add a timestamp in the name of the output file.*
+
+![script to backup](./img/backup_script.png)
+
+![backup](./img/backup.png)
